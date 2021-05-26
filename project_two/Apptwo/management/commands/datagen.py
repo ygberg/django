@@ -27,7 +27,7 @@ class Command(BaseCommand):
                 
                         #wepage_name = Webpage.objects.filter(name__pk=i)
                         dt = fake.date()
-                        AccessRecords.objects.create(name =webpg, date=dt)
+                        AccessRecords.objects.get_or_create(name =webpg, date=dt)[0]
 
                 #print(Webpage.objects.all())
                 

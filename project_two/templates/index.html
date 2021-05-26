@@ -6,7 +6,7 @@
         </head>
         <body>
                 <h1>Query from topics</h1>
-                <table>
+              <!--   <table>
                         {% for item in topics %}
                         <tr> 
                              <td>{{ item.topic_name }}</td>
@@ -25,17 +25,33 @@
                      <td>{{ item.url}}</td>
                 </tr>
                    {% endfor %}
-                </table>
+                </table> -->
                    <h1>Query from accessrecords</h1>
-                   {% for item in access %}
+                   
                    
                    <table>
+                           <th>Site Name</th>
+                           <th>Date Accessed</th>
+                        {% for item in access %}
                 <tr> 
                      <td>{{ item.name }}</td>
                      <td>{{ item.date }}</td>
                 </tr>
                    {% endfor %}
                 </table>
+        </table>
+        <h1>Query from webrecords</h1>
+        
+        
+        <table>
+                {% for item in webrecords %}
+     <tr> 
+          <td>{{item.name}}</td>
+          {% endfor %}
+     </tr>
+        
+     </table>
+     {{webrecords}}
         </body>
 </html>
         
