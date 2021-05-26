@@ -20,4 +20,4 @@ class AccessRecords(models.Model):
     date = models.DateField()
 
     def __str__(self) -> str:
-        return self.date
+        return str(self.date)

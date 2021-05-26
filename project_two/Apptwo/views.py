@@ -6,8 +6,11 @@ from .models import Topic,Webpage,AccessRecords
 
 def home_view(request,**kwargs):
     
-    my_dict =  {'insert_me':new_topic,'help_me':'www.google.se'}
-    return render(request,"index.html",context = my_dict)
+    topics = Topic.objects.all()
+    webpage = Webpage.objects.all()
+    access = AccessRecords.objects.all()
+    context = {'topics': topics,'webpage':webpage,'access':access}
+    return render(request,"index.html",{'topics': topics,'webpage':webpage,'access':access})
 
 def help(request):
     return render(request,'project_two_templates\help.html',{})

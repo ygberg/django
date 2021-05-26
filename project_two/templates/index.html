@@ -1,14 +1,41 @@
+
 {%load static%}
 <html>
         <head>
                 <link rel="stylesheet" href="">
         </head>
         <body>
-                <h1>hello world</h1>
+                <h1>Query from topics</h1>
+                <table>
+                        {% for item in topics %}
+                        <tr> 
+                             <td>{{ item.topic_name }}</td>
+                             
+                        </tr>
+                           {% endfor %}
+                        </table>
+
+                <h1>Query from models webpage</h1>
                 
-        {{inser_me}}
-                <a href="http:\\{{help_me}}">google</a>
-                <img src="{%static 'images\django.jpeg'%}" alt="test">
+                <table>
+                {% for item in webpage %}
+                <tr> 
+                     <td>{{ item.topic }}</td>
+                     <td>{{ item.name }}</td>
+                     <td>{{ item.url}}</td>
+                </tr>
+                   {% endfor %}
+                </table>
+                   <h1>Query from accessrecords</h1>
+                   {% for item in access %}
+                   
+                   <table>
+                <tr> 
+                     <td>{{ item.name }}</td>
+                     <td>{{ item.date }}</td>
+                </tr>
+                   {% endfor %}
+                </table>
         </body>
 </html>
         

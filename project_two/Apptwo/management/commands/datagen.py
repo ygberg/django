@@ -15,7 +15,7 @@ class Command(BaseCommand):
                 
                 for _ in range(10):
                         topi = fake.unique.sentence(nb_words=2)
-                        top = Topic.objects.get_or_create(topic_name =topi)[0]
+                        top =Topic.objects.get_or_create(topic_name =topi)[0]
 
                 
                         
