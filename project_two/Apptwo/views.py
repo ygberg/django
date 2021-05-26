@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Topic,Webpage,AccessRecords
-from faker import Faker
+
 # Create your views here.
 
 def home_view(request,**kwargs):

@@ -14,22 +14,23 @@ class Command(BaseCommand):
                 fake = Faker()
                 
                 for _ in range(10):
-                        top = fake.unique.sentence(nb_words=2)
-                        Topic.objects.create(topic_name =top )
-                for i in range(10):
-                        topic_name_fromtopic = Topic.objects.filter(topic_name__pk=i)
+                        topi = fake.unique.sentence(nb_words=2)
+                        top = Topic.objects.get_or_create(topic_name =topi)[0]
+
+                
+                        
+                        #topic_name_fromtopic = Topic.objects.get(pk=i)
                         ur = fake.unique.domain_name()
                         nam = fake.unique.sentence(nb_words=2)
-                        Webpage.objects.create(topic = topic_name_fromtopic, name=nam,url=ur)
+                        webpg = Webpage.objects.get_or_create(topic = top, name=nam,url=ur)[0]
 
-                for i in range(10):
-                        wepage_name = Webpage.objects.filter(name_pk=i)
+                
+                        #wepage_name = Webpage.objects.filter(name__pk=i)
                         dt = fake.date()
-                        
-                        AccessRecords.objects.create(name =wepage_name, date=dt)
+                        AccessRecords.objects.create(name =webpg, date=dt)
 
-                print(Topic.objects.all())
-                print(Webpage.objects.all())
+                #print(Webpage.objects.all())
+                
             
 
 
